@@ -1,0 +1,130 @@
+body,ul,div,li,input{
+    margin:0;
+    padding:0;
+}
+
+h2{
+    text-decoration: underline;
+}
+
+    div{
+        text-align:center;
+        min-width:200px;
+        }
+    .todoDiv{
+        border-right:1px solid grey;
+    }
+
+    ul{
+        border-top:1px solid grey;
+        padding-left:22px;
+    }
+
+    li{
+        padding-top:10px;
+        list-style-type: none;
+    }
+
+    .wrapper{
+        padding:10px;
+        border:1px solid black;
+        overflow:auto;
+        width:95%;
+        margin:10px auto;
+        box-shadow: 10px 10px 5px #888888;
+    }
+
+    button{
+        float:right;
+        right:15px;
+        overflow:auto;
+        clear:right;
+    }
+
+    .todoDiv, .doneDiv, .inputDiv{
+        text-align:left;
+        margin:0 10px;
+        padding:10px 20px;
+        float: left;
+    }
+
+
+    .listHeader{
+        display :block;
+        font-weight:bold;
+        text-align: center;
+    }
+
+    .inputDiv{
+        width: 96%;
+    }
+
+    .todoDiv{
+        width:55%;
+    }
+
+    .doneDiv{
+        width: 40%;
+    }
+
+    .txtTask{
+        width:50%;
+    }
+
+    .slctPriority{
+      width:auto;  
+    }
+
+    .targetDate{
+        width:20%;
+    }
+
+    .spnList{
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        width:40%;
+        display: inline-block;
+        padding-top:5px;
+    }
+
+    .spnPriority{
+        width: 5%;
+        margin-left: 1%;
+    }
+
+    .spnTargetDate{
+        width: 20%;
+    }
+
+    .spnPriorityList{
+        width: 5%;
+        margin-left: 20px;
+    }
+
+    .spnTargetDateList{
+        width: 20%;
+        padding-left: 10px;
+        margin-left: 20px;
+    }
+
+    .sortBy{
+        //float: right;
+        font-weight: 500;
+        text-decoration: none;
+        margin-right: 10px;
+    }
+
+    table,th, tr{
+        border: 1px solid black;
+    }
+
+    .btnUpdate{
+        position: absolute;
+        right: 49%;
+    }
+
+    .btnDone{
+        position: absolute;
+        right: 45%;
+    }

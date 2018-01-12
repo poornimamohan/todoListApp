@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My Todo List</title>
+       <link rel="stylesheet" type="text/css" href="styles.css">
+       <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+        <script type="text/javascript" src="todoList.js"></script>
+    </head>
+    <body ng-app="myApp" ng-controller="todoCtrl">
+        <div class="wrapper">
+            <h2>My Todo List</h2>
+            <div class="inputDiv">
+                <input type="text" ng-model="todoInput"  placeholder="Add new task" class="txtTask">
+                Priority:
+                <select ng-model="priority" class="slctPriority">
+                    <option value="1">Low</option>
+                    <option value="2">Med</option>
+                    <option value="3">High</option>
+                </select>
+                Target date: 
+                <input type="date" name="targetDate" ng-model ="targetDate">
+                <input class="btn btn-primary addEdit" type="button" value="Add" ng-click="todoAdd()">
+
+            </div>
+            <br>
+            <div class="todoDiv" ng-show="todoList.length > 0" ><span class="listHeader">Todos</span>
+           <ul>
+                <span class="spnList sortBy">Tasks</span>
+                <a href="#" class="sortBy spnPriority" ng-click=sortByPriority(!priorityAsc)>Priority<span class="glyphicon glyphicon-sort"></span></a>
+                <a href="#" class="sortBy spnTargetDate" ng-click="sortByTargetDate(!targetDateAsc)">Target date<span class="glyphicon glyphicon-sort"></span></a>
+                    <li  ng-repeat="x in todoList">
+                        <span type ="text" class="spnList" >{{x.name}}</span>
+                        <span class="spnPriorityList sortBy">{{priorityArr[x.priority]}}</span>
+                        <span class="spnTargetDateList sortBy">{{x.targetDate}}</span>
+                        <!-- <input type="submit" class="btn btn-primary btnUpdate" ng-click="editTask($index, $event)" value="Update"> -->
+                        <button class="btn btn-primary btnUpdate" ng-click="editTask($index, $event)" >Update </button>
+                        <button ng-click="markDone($index)" class="btn btn-success btnDone">
+                            <span class="glyphicon glyphicon-ok"></span>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+            <div class="doneDiv" ng-show="doneList.length  > 0"><span class="listHeader">Done</span>
+                <ul>
+                    <li ng-repeat="x in doneList">
+                        <span class="spnList">{{x.name}}</span>
+                        <button ng-click="removeTask($index)"class="btn btn-danger">
+                            <span class="glyphicon glyphicon-remove"></span>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+    </div>
+    </body>
+</html>
+
